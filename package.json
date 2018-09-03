@@ -1,0 +1,42 @@
+{
+  "name": "period-tracker-react",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Period Tracker made in React",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/electricg/period-tracker-react.git"
+  },
+  "author": "Giulia Alfonsi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/electricg/period-tracker-react/issues"
+  },
+  "homepage": "https://github.com/electricg/period-tracker-react#readme",
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.5.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.11.1",
+    "prettier": "^1.14.2",
+    "prettier-eslint": "^8.8.2"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^1.1.5",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.5"
+  }
+}
