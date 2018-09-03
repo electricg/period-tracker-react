@@ -7,7 +7,7 @@ import {
 
 const defaultState = {
   startDayOfWeek: 1,
-  showExtendedMonth: false,
+  showExtendedMonth: true,
   periodLength: 4,
   cycleLength: 28,
 };

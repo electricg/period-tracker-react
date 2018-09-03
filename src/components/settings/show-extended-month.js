@@ -21,14 +21,14 @@ class SettingsShowExtendedMonth extends Component {
   }
 
   render() {
-    const { ShowExtendedMonth } = this.props;
+    const { showExtendedMonth } = this.props;
 
     return (
       <div>
         <input
           type="checkbox"
           id="settings-extended-month"
-          checked={ShowExtendedMonth}
+          checked={showExtendedMonth}
           ref={input => (this.input = input)}
           onChange={this.handleChange}
         />
