@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class PageHome extends Component {
-  render() {
-    return <div>home</div>;
-  }
-}
+import Home from '../components/home/index';
+
+const PageHome = () => {
+  return <Home />;
+};
 
 export default PageHome;

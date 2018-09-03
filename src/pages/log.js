@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class PageLog extends Component {
-  render() {
-    return <div>log</div>;
-  }
-}
+import Log from '../components/log/index';
+
+const PageLog = () => {
+  return <Log />;
+};
 
 export default PageLog;
