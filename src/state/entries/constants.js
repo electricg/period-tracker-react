@@ -1,0 +1,2 @@
+export const ENTRIES_ADD = 'ENTRIES_ADD';
+export const ENTRIES_REMOVE = 'ENTRIES_REMOVE';

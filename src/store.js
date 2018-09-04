@@ -4,11 +4,13 @@ import thunk from 'redux-thunk';
 
 // Local Reducers
 import settings from './state/settings/reducer';
+import entries from './state/entries/reducer';
 
 const { NODE_ENV } = process.env;
 
 const reducers = {
   settings,
+  entries,
 };
 
 /**

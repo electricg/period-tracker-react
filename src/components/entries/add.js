@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-const DateFnsFormat = require('date-fns/format');
+import DateFnsFormat from 'date-fns/format';
+
+import { addEntry } from '../../state/entries/actions';
 
 class EntriesAdd extends Component {
   constructor(props) {
@@ -27,12 +29,13 @@ class EntriesAdd extends Component {
     const { dispatch } = this.props;
     const value = this.input.value;
     const form = this.form;
-    console.log('save', dispatch, value);
+
+    dispatch(addEntry(value));
+
     form.reset();
   }
 
   handleReset() {
-    console.log('reset');
     this.handleHideAdd();
   }
 
