@@ -6,6 +6,7 @@ const {
   doesDateExists,
   calcDatesRanges,
   calcDatesCovered,
+  calcFutureDates,
 } = require('../../../src/state/entries/utils');
 
 describe('getToday', () => {
@@ -501,6 +502,60 @@ describe('calcDatesCovered', () => {
     const { desc, input1, input2, expectedOutput } = o;
     test(desc, () => {
       const output = calcDatesCovered(input1, input2);
+      expect(output).toEqual(expectedOutput);
+    });
+  });
+});
+
+describe('calcFutureDates', () => {
+  const cases = [
+    {
+      desc: 'should succeed with no lastDate',
+      input1: '',
+      expectedOutput: [],
+    },
+    {
+      desc: 'should succeed with no untilDate',
+      input1: '2018-01-01',
+      input2: '',
+      expectedOutput: [],
+    },
+    {
+      desc: 'should succeed with range equal to 0',
+      input1: '2018-01-01',
+      input2: '2018-02-01',
+      input3: 0,
+      expectedOutput: [],
+    },
+    {
+      desc: 'should succeed with no range passed',
+      input1: '2017-12-04',
+      input2: '2018-02-01',
+      expectedOutput: ['2018-01-01', '2018-01-29', '2018-02-26'],
+    },
+    {
+      desc: 'should succeed with no range equal to 1',
+      input1: '2017-12-27',
+      input2: '2018-01-04',
+      input3: 1,
+      expectedOutput: [
+        '2017-12-28',
+        '2017-12-29',
+        '2017-12-30',
+        '2017-12-31',
+        '2018-01-01',
+        '2018-01-02',
+        '2018-01-03',
+        '2018-01-04',
+        '2018-01-05',
+      ],
+    },
+  ];
+
+  cases.forEach(o => {
+    const { desc, input1, input2, input3, expectedOutput } = o;
+    test(desc, () => {
+      const output = calcFutureDates(input1, input2, input3);
       expect(output).toEqual(expectedOutput);
     });
   });

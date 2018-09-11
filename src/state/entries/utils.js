@@ -133,9 +133,29 @@ const calcDatesCovered = (dates = [], cover = 0) => {
 };
 
 /**
- * Calculate the future dates
+ * Calculate future dates
+ * @param {String} lastDate - format of the date is YYYY-MM-DD
+ * @param {String} untilDate - format of the date is YYYY-MM-DD
+ * @param {Number} range
+ * @returns {String[]} format of the date is YYYY-MM-DD
  */
-const calcFutureDates = (currentDate = '', range, ) => {};
+const calcFutureDates = (lastDate, untilDate, range = 28) => {
+  if (!lastDate || !untilDate || range < 1) {
+    return [];
+  }
+
+  let res = [];
+  let _lastDate = lastDate;
+  let _lastDateObj = newDate(_lastDate);
+
+  while (_lastDate <= untilDate) {
+    _lastDateObj = DateFnsAddDays(_lastDateObj, range);
+    _lastDate = DateFnsFormat(_lastDateObj, 'YYYY-MM-DD');
+    res.push(_lastDate);
+  }
+
+  return res;
+};
 
 const addEntry = () => {};
 
@@ -148,3 +168,4 @@ module.exports.deleteDuplicatedDates = deleteDuplicatedDates;
 module.exports.doesDateExists = doesDateExists;
 module.exports.calcDatesRanges = calcDatesRanges;
 module.exports.calcDatesCovered = calcDatesCovered;
+module.exports.calcFutureDates = calcFutureDates;
