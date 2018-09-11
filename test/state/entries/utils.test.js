@@ -1,10 +1,103 @@
 const {
+  getToday,
+  newDate,
   sortDates,
   deleteDuplicatedDates,
   doesDateExists,
   calcDatesRanges,
   calcDatesCovered,
 } = require('../../../src/state/entries/utils');
+
+describe('getToday', () => {
+  test('should succeed', () => {
+    const output = getToday();
+    console.log(output);
+    expect(!!output.match(/\d{4}-[01]\d{1}-[0-3]\d{1}/)).toEqual(true);
+  });
+});
+
+describe('newDate', () => {
+  const cases1 = [
+    {
+      desc: 'should succeed and return today with null',
+      input: null,
+    },
+    {
+      desc: 'should succeed and return today with undefined',
+      input: undefined,
+    },
+    {
+      desc: 'should succeed and return today with an empty string',
+      input: '',
+    },
+    {
+      desc: 'should succeed and return today with a number',
+      input: 0,
+    },
+    {
+      desc: 'should succeed and return today with a bool',
+      input: true,
+    },
+    {
+      desc: 'should succeed and return today with an object',
+      input: {},
+    },
+    {
+      desc: 'should succeed and return today with a function',
+      input: () => {},
+    },
+    {
+      desc: 'should succeed and return today with an array',
+      input: [],
+    },
+  ];
+
+  const cases2 = [
+    {
+      desc: 'should succeed with a valid date - first day of the year',
+      input: '2018-01-01',
+      expectedOutput: {
+        year: 2018,
+        month: 0,
+        day: 1,
+      },
+    },
+    {
+      desc: 'should succeed with a valid date - last day of the year',
+      input: '2018-12-31',
+      expectedOutput: {
+        year: 2018,
+        month: 11,
+        day: 31,
+      },
+    },
+  ];
+
+  cases1.forEach(o => {
+    const { desc, input } = o;
+    test(desc, () => {
+      const expectedOutput = new Date();
+      const output = newDate(input);
+      expect(Object.prototype.toString.call(output)).toEqual('[object Date]');
+      // this is risky
+      expect(output.getFullYear()).toEqual(expectedOutput.getFullYear());
+      expect(output.getMonth()).toEqual(expectedOutput.getMonth());
+      expect(output.getDate()).toEqual(expectedOutput.getDate());
+    });
+  });
+
+  cases2.forEach(o => {
+    const { desc, input, expectedOutput } = o;
+    test(desc, () => {
+      const output = newDate(input);
+      expect(Object.prototype.toString.call(output)).toEqual('[object Date]');
+      // this is risky
+      expect(output.getFullYear()).toEqual(expectedOutput.year);
+      expect(output.getMonth()).toEqual(expectedOutput.month);
+      expect(output.getDate()).toEqual(expectedOutput.day);
+    });
+  });
+});
 
 describe('sortDates', () => {
   const cases = [

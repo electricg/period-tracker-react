@@ -3,24 +3,35 @@ const DateFnsAddDays = require('date-fns/add_days');
 const DateFnsFormat = require('date-fns/format');
 
 /**
- * // TODO test
  * Return today's date
- * @returns {String} format of the date is YYYY-M-D
+ * @returns {String} format of the date is YYYY-MM-DD
  */
 const getToday = () => {
   const date = new Date();
+  const year = date.getFullYear();
+  const _month = date.getMonth() + 1;
+  const _day = date.getDate();
 
-  return `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+  const month = _month < 10 ? `0${_month}` : _month;
+  const day = _day < 10 ? `0${_day}` : _day;
+
+  return `${year}-${month}-${day}`;
 };
 
 /**
- * // TODO test
  * Return date object with the time set to noon UTC
- * @param {String} date - format of the date is YYYY-MM-DD or YYYY-M-D
+ * @param {String} date - format of the date is YYYY-MM-DD
  * @return {Object}
  */
 const newDate = (date = '') => {
-  const _date = date || getToday();
+  let _date;
+
+  if (typeof date === 'string' && date) {
+    _date = date;
+  } else {
+    _date = getToday();
+  }
+
   return new Date(`${_date}T12:00:00.000Z`);
 };
 
@@ -121,12 +132,17 @@ const calcDatesCovered = (dates = [], cover = 0) => {
   }, []);
 };
 
-const calcFutureDates = () => {};
+/**
+ * Calculate the future dates
+ */
+const calcFutureDates = (currentDate = '', range, ) => {};
 
 const addEntry = () => {};
 
 const removeEntry = () => {};
 
+module.exports.getToday = getToday;
+module.exports.newDate = newDate;
 module.exports.sortDates = sortDates;
 module.exports.deleteDuplicatedDates = deleteDuplicatedDates;
 module.exports.doesDateExists = doesDateExists;
