@@ -43,6 +43,9 @@
     "redux-thunk": "^2.3.0"
   },
   "jest": {
-    "collectCoverage": true
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "helper.js"
+    ]
   }
 }
