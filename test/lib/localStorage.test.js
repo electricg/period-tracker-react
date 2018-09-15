@@ -5,6 +5,10 @@ const {
 } = require('../../src/lib/localStorage');
 const { LocalStorageMock } = require('../helper');
 
+beforeEach(() => {
+  delete global.localStorage;
+});
+
 afterEach(() => {
   delete global.localStorage;
 });
