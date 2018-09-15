@@ -1,11 +1,11 @@
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
+import { loadState, saveState } from './lib/localStorage';
 
 // Local Reducers
 import settings from './state/settings/reducer';
 import entries from './state/entries/reducer';
-import { loadState, saveState } from './lib/localStorage';
 
 const { NODE_ENV } = process.env;
 

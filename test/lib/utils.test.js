@@ -456,18 +456,20 @@ const _cases = {
   ],
 };
 
-methods.forEach(method => {
-  describe(method, () => {
-    const cases = _cases[method];
-    cases.forEach(o => {
-      const { desc, input, expectedOutput } = o;
-      const freeze = input.map(item => JSON.stringify(item));
-      test(desc, () => {
-        const output = utils[method].apply(null, input);
-        expect(output).toEqual(expectedOutput);
-        // check that the function is pure and doesn't change the arguments
-        input.forEach((item, i) => {
-          expect(JSON.stringify(item)).toEqual(freeze[i]);
+describe('utils', () => {
+  methods.forEach(method => {
+    describe(method, () => {
+      const cases = _cases[method];
+      cases.forEach(o => {
+        const { desc, input, expectedOutput } = o;
+        const freeze = input.map(item => JSON.stringify(item));
+        test(desc, () => {
+          const output = utils[method].apply(null, input);
+          expect(output).toEqual(expectedOutput);
+          // check that the function is pure and doesn't change the arguments
+          input.forEach((item, i) => {
+            expect(JSON.stringify(item)).toEqual(freeze[i]);
+          });
         });
       });
     });
