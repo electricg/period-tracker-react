@@ -22,6 +22,9 @@ class LocalStorageMock {
     delete this.store[key];
   }
 }
+const LocalStorageMockReset = () => {
+  delete global.localStorage;
+};
 
 /**
  * Mock Date
@@ -46,5 +49,6 @@ global.console.log = () => {
 };
 
 module.exports.LocalStorageMock = LocalStorageMock;
+module.exports.LocalStorageMockReset = LocalStorageMockReset;
 module.exports.mockDate = mockDate;
 module.exports.mockDateReset = mockDateReset;

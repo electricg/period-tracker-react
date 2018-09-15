@@ -3,14 +3,14 @@ const {
   loadState,
   saveState,
 } = require('../../src/lib/localStorage');
-const { LocalStorageMock } = require('../helper');
+const { LocalStorageMock, LocalStorageMockReset } = require('../helper');
 
 beforeEach(() => {
-  delete global.localStorage;
+  LocalStorageMockReset();
 });
 
 afterEach(() => {
-  delete global.localStorage;
+  LocalStorageMockReset();
 });
 
 describe('localStorage', () => {
