@@ -7,7 +7,7 @@ const _cases = {
   getToday: [
     {
       desc: 'should succeed',
-      input: [undefined],
+      input: [],
       expectedOutput: DateFnsFormat(new Date(), 'YYYY-MM-DD'),
     },
   ],
@@ -197,6 +197,11 @@ const _cases = {
     },
   ],
   doesDateExists: [
+    {
+      desc: 'should return false with no arguments',
+      input: [undefined, undefined],
+      expectedOutput: false,
+    },
     {
       desc: 'should return false with null',
       input: ['', null],

@@ -157,9 +157,9 @@ const calcFutureDates = (lastDate, untilDate, range = 28) => {
   return res;
 };
 
-const addEntry = () => {};
+// const addEntry = () => {};
 
-const removeEntry = () => {};
+// const removeEntry = () => {};
 
 module.exports.getToday = getToday;
 module.exports.newDate = newDate;
