@@ -1,88 +1,5 @@
 const DateFnsFormat = require('date-fns/format');
-const { newDate, ...utils } = require('../../../src/state/entries/utils');
-
-describe('newDate', () => {
-  const cases1 = [
-    {
-      desc: 'should succeed and return today with null',
-      input: null,
-    },
-    {
-      desc: 'should succeed and return today with undefined',
-      input: undefined,
-    },
-    {
-      desc: 'should succeed and return today with an empty string',
-      input: '',
-    },
-    {
-      desc: 'should succeed and return today with a number',
-      input: 0,
-    },
-    {
-      desc: 'should succeed and return today with a bool',
-      input: true,
-    },
-    {
-      desc: 'should succeed and return today with an object',
-      input: {},
-    },
-    {
-      desc: 'should succeed and return today with a function',
-      input: () => {},
-    },
-    {
-      desc: 'should succeed and return today with an array',
-      input: [],
-    },
-  ];
-
-  const cases2 = [
-    {
-      desc: 'should succeed with a valid date - first day of the year',
-      input: '2018-01-01',
-      expectedOutput: {
-        year: 2018,
-        month: 0,
-        day: 1,
-      },
-    },
-    {
-      desc: 'should succeed with a valid date - last day of the year',
-      input: '2018-12-31',
-      expectedOutput: {
-        year: 2018,
-        month: 11,
-        day: 31,
-      },
-    },
-  ];
-
-  cases1.forEach(o => {
-    const { desc, input } = o;
-    test(desc, () => {
-      const expectedOutput = new Date();
-      const output = newDate(input);
-      expect(Object.prototype.toString.call(output)).toEqual('[object Date]');
-      // this is risky
-      expect(output.getFullYear()).toEqual(expectedOutput.getFullYear());
-      expect(output.getMonth()).toEqual(expectedOutput.getMonth());
-      expect(output.getDate()).toEqual(expectedOutput.getDate());
-    });
-  });
-
-  cases2.forEach(o => {
-    const { desc, input, expectedOutput } = o;
-    test(desc, () => {
-      const output = newDate(input);
-      expect(Object.prototype.toString.call(output)).toEqual('[object Date]');
-      // this is risky
-      expect(output.getFullYear()).toEqual(expectedOutput.year);
-      expect(output.getMonth()).toEqual(expectedOutput.month);
-      expect(output.getDate()).toEqual(expectedOutput.day);
-    });
-  });
-});
+const utils = require('../../../src/state/entries/utils');
 
 const methods = Object.keys(utils);
 
@@ -92,6 +9,74 @@ const _cases = {
       desc: 'should succeed',
       input: [undefined],
       expectedOutput: DateFnsFormat(new Date(), 'YYYY-MM-DD'),
+    },
+  ],
+  newDate: [
+    {
+      desc: 'should succeed and return today with null',
+      input: [null],
+      expectedOutput: new Date(
+        DateFnsFormat(new Date(), 'YYYY-MM-DD[T]12:00:00.000[Z]')
+      ),
+    },
+    {
+      desc: 'should succeed and return today with undefined',
+      input: [undefined],
+      expectedOutput: new Date(
+        DateFnsFormat(new Date(), 'YYYY-MM-DD[T]12:00:00.000[Z]')
+      ),
+    },
+    {
+      desc: 'should succeed and return today with an empty string',
+      input: [''],
+      expectedOutput: new Date(
+        DateFnsFormat(new Date(), 'YYYY-MM-DD[T]12:00:00.000[Z]')
+      ),
+    },
+    {
+      desc: 'should succeed and return today with a number',
+      input: [0],
+      expectedOutput: new Date(
+        DateFnsFormat(new Date(), 'YYYY-MM-DD[T]12:00:00.000[Z]')
+      ),
+    },
+    {
+      desc: 'should succeed and return today with a bool',
+      input: [true],
+      expectedOutput: new Date(
+        DateFnsFormat(new Date(), 'YYYY-MM-DD[T]12:00:00.000[Z]')
+      ),
+    },
+    {
+      desc: 'should succeed and return today with an object',
+      input: [{}],
+      expectedOutput: new Date(
+        DateFnsFormat(new Date(), 'YYYY-MM-DD[T]12:00:00.000[Z]')
+      ),
+    },
+    {
+      desc: 'should succeed and return today with a function',
+      input: [() => {}],
+      expectedOutput: new Date(
+        DateFnsFormat(new Date(), 'YYYY-MM-DD[T]12:00:00.000[Z]')
+      ),
+    },
+    {
+      desc: 'should succeed and return today with an array',
+      input: [[]],
+      expectedOutput: new Date(
+        DateFnsFormat(new Date(), 'YYYY-MM-DD[T]12:00:00.000[Z]')
+      ),
+    },
+    {
+      desc: 'should succeed with a valid date - first day of the year',
+      input: ['2018-01-01'],
+      expectedOutput: new Date('2018-01-01T12:00:00.000Z'),
+    },
+    {
+      desc: 'should succeed with a valid date - last day of the year',
+      input: ['2018-12-31'],
+      expectedOutput: new Date('2018-12-31T12:00:00.000Z'),
     },
   ],
   sortDates: [
