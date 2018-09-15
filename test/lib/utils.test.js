@@ -1,5 +1,5 @@
 const DateFnsFormat = require('date-fns/format');
-const utils = require('../../../src/state/entries/utils');
+const utils = require('../../src/lib/utils');
 
 const methods = Object.keys(utils);
 
