@@ -1,16 +1,5 @@
-const {
-  getToday,
-  newDate,
-  ...utils
-} = require('../../../src/state/entries/utils');
-
-describe('getToday', () => {
-  test('should succeed', () => {
-    const output = getToday();
-    console.log(output);
-    expect(!!output.match(/\d{4}-[01]\d{1}-[0-3]\d{1}/)).toEqual(true);
-  });
-});
+const DateFnsFormat = require('date-fns/format');
+const { newDate, ...utils } = require('../../../src/state/entries/utils');
 
 describe('newDate', () => {
   const cases1 = [
@@ -98,6 +87,13 @@ describe('newDate', () => {
 const methods = Object.keys(utils);
 
 const _cases = {
+  getToday: [
+    {
+      desc: 'should succeed',
+      input: [undefined],
+      expectedOutput: DateFnsFormat(new Date(), 'YYYY-MM-DD'),
+    },
+  ],
   sortDates: [
     {
       desc: 'should succeed with null',
