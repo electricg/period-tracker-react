@@ -1,16 +1,50 @@
 const DateFnsFormat = require('date-fns/format');
-const utils = require('../../src/lib/utils');
+const { getToday, ...utils } = require('../../src/lib/utils');
+const { mockDate, mockDateReset } = require('../helper');
+
+describe('getToday', () => {
+  const cases = [
+    {
+      desc: 'should work with smaller than 10 month and day',
+      input: [],
+      expectedOutput: '2018-01-01',
+    },
+    {
+      desc: 'should work with bigger than 10 month and day',
+      input: [],
+      expectedOutput: '2018-12-31',
+    },
+  ];
+
+  afterEach(() => {
+    mockDateReset();
+  });
+
+  cases.forEach(o => {
+    const { desc, input, expectedOutput } = o;
+    const freeze = input.map(item => JSON.stringify(item));
+    test(desc, () => {
+      mockDate(`${expectedOutput} 00:00:00`);
+      const output = getToday.apply(null, input);
+      expect(output).toEqual(expectedOutput);
+      // check that the function is pure and doesn't change the arguments
+      input.forEach((item, i) => {
+        expect(JSON.stringify(item)).toEqual(freeze[i]);
+      });
+    });
+  });
+});
 
 const methods = Object.keys(utils);
 
 const _cases = {
-  getToday: [
-    {
-      desc: 'should succeed',
-      input: [],
-      expectedOutput: DateFnsFormat(new Date(), 'YYYY-MM-DD'),
-    },
-  ],
+  // getToday: [
+  //   {
+  //     desc: 'should succeed',
+  //     input: [],
+  //     expectedOutput: DateFnsFormat(new Date(), 'YYYY-MM-DD'),
+  //   },
+  // ],
   newDate: [
     {
       desc: 'should succeed and return today with null',

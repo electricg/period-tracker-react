@@ -24,6 +24,21 @@ class LocalStorageMock {
 }
 
 /**
+ * Mock Date
+ */
+const RealDate = Date;
+const mockDate = isoDate => {
+  global.Date = class extends RealDate {
+    constructor() {
+      return new RealDate(isoDate);
+    }
+  };
+};
+const mockDateReset = () => {
+  global.Date = RealDate;
+};
+
+/**
  * Hide console.log output in test
  */
 global.console.log = () => {
@@ -31,3 +46,5 @@ global.console.log = () => {
 };
 
 module.exports.LocalStorageMock = LocalStorageMock;
+module.exports.mockDate = mockDate;
+module.exports.mockDateReset = mockDateReset;
