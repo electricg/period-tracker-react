@@ -1,0 +1,45 @@
+:root {
+  --c-main-text: #333;
+  --c-main-bg: #eee;
+  --c-theme-first: #09f;
+  --c-theme-second: #00ffc4;
+  --c-secondary-text: #808080;
+  --c-secondary-bg: #ccc;
+  --border-radius: 3px;
+  --height-top: 2.5rem;
+  --height-bottom: 2.8rem;
+  --gap: 0.5rem;
+}
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  font-size: 18px;
+}
+body {
+  background: var(--c-main-bg);
+  line-height: 1.4;
+  margin: 0;
+}
+body,
+input,
+button {
+  color: var(--c-main-text);
+  font-family: Arial, sans-serif;
+}
+a {
+  color: var(--c-theme-first);
+  text-decoration: none;
+}
+label,
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  -webkit-appearance: none;
+  cursor: pointer;
+}
