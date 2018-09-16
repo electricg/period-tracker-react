@@ -1,0 +1,7 @@
+.icon {
+  display: block;
+  fill: currentColor;
+  height: var(--size);
+  margin: 0 auto;
+  width: var(--size);
+}
