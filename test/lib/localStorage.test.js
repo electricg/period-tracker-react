@@ -1,9 +1,9 @@
-const {
+import {
   localStorageNamespace,
   loadState,
   saveState,
-} = require('../../src/lib/localStorage');
-const { LocalStorageMock, LocalStorageMockReset } = require('../helper');
+} from '../../src/lib/localStorage';
+import { LocalStorageMock, LocalStorageMockReset } from '../helper';
 
 beforeEach(() => {
   LocalStorageMockReset();

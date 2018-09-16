@@ -1,6 +1,6 @@
-const DateFnsDifferenceInDays = require('date-fns/difference_in_days');
-const DateFnsAddDays = require('date-fns/add_days');
-const DateFnsFormat = require('date-fns/format');
+import DateFnsDifferenceInDays from 'date-fns/difference_in_days';
+import DateFnsAddDays from 'date-fns/add_days';
+import DateFnsFormat from 'date-fns/format';
 
 /**
  * Return today's date

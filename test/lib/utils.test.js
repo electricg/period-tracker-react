@@ -1,6 +1,8 @@
-const DateFnsFormat = require('date-fns/format');
-const { getToday, ...utils } = require('../../src/lib/utils');
-const { mockDate, mockDateReset } = require('../helper');
+import DateFnsFormat from 'date-fns/format';
+import _utils from '../../src/lib/utils';
+import { mockDate, mockDateReset } from '../helper';
+
+const { getToday, ...utils } = _utils;
 
 describe('getToday', () => {
   const cases = [
@@ -38,13 +40,6 @@ describe('getToday', () => {
 const methods = Object.keys(utils);
 
 const _cases = {
-  // getToday: [
-  //   {
-  //     desc: 'should succeed',
-  //     input: [],
-  //     expectedOutput: DateFnsFormat(new Date(), 'YYYY-MM-DD'),
-  //   },
-  // ],
   newDate: [
     {
       desc: 'should succeed and return today with null',

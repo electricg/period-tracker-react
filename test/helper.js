@@ -33,6 +33,7 @@ const RealDate = Date;
 const mockDate = isoDate => {
   global.Date = class extends RealDate {
     constructor() {
+      super();
       return new RealDate(isoDate);
     }
   };
