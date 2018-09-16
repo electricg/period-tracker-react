@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Log from '../components/log/index';
+import Log from '../components/log';
 
 const PageLog = () => {
   return <Log />;

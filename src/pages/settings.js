@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Settings from '../components/settings/index';
+import Settings from '../components/settings';
 
 const PageSettings = () => {
   return <Settings />;

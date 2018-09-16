@@ -6,8 +6,8 @@ import PageHome from './pages/home';
 import PageLog from './pages/log';
 import PageSettings from './pages/settings';
 
-import Header from './components/header/index';
-import Nav from './components/nav/index';
+import Header from './components/header';
+import Nav from './components/nav';
 
 class App extends Component {
   render() {
