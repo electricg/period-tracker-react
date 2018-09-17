@@ -5,6 +5,7 @@
   width: 100%;
   z-index: 1;
 }
+
 .main-nav__list {
   align-items: stretch;
   display: flex;
@@ -14,11 +15,13 @@
   text-align: center;
   width: 100%;
 }
+
 .main-nav__item {
   flex: 1;
   height: 100%;
   list-style: none;
 }
+
 .main-nav__link {
   color: var(--c-theme-second);
   display: block;
@@ -27,17 +30,14 @@
   padding-top: 0.5em;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
+
 .main-nav__link:hover,
 .main-nav__link:focus {
   text-shadow: 1px 1px 10px rgba(255, 255, 255, 1);
 }
+
 .main-nav__link--selected {
   background: var(--c-theme-second);
   color: var(--c-theme-first);
   text-shadow: none;
-}
-.main-nav__icon {
-  --size: 1.25em;
-  margin-bottom: 0.25em;
-  stroke: rgba(0, 0, 0, 0.2);
 }

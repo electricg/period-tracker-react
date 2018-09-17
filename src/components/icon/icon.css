@@ -5,3 +5,9 @@
   margin: 0 auto;
   width: var(--size);
 }
+
+.icon--main-nav {
+  --size: 1.25em;
+  margin-bottom: 0.25em;
+  stroke: rgba(0, 0, 0, 0.2);
+}

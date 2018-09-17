@@ -17,7 +17,7 @@ const NavItem = ({ id = '', path = '', label = '', exact = false }) => {
         to={path}
         exact={exact}
       >
-        <Icon id={id} />
+        <Icon id={id} cssModifier="main-nav" />
         {label}
       </NavLink>
     </li>
