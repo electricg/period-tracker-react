@@ -1,42 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
+import FieldsCheckbox from '../fields/checkbox';
 import { settingsSetShowExtendedMonth } from '../../state/settings/actions';
 
-const setShowExtendedMonth = (dispatch, checked) => {
-  dispatch(settingsSetShowExtendedMonth(checked));
+const SettingsShowExtendedMonth = ({ dispatch, showExtendedMonth }) => {
+  return (
+    <FieldsCheckbox
+      dispatch={dispatch}
+      action={settingsSetShowExtendedMonth}
+      id="settings-extended-month"
+      label="Show extended month"
+      checked={showExtendedMonth}
+    />
+  );
 };
-
-class SettingsShowExtendedMonth extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange() {
-    const { dispatch } = this.props;
-    const input = this.input;
-    setShowExtendedMonth(dispatch, input.checked);
-  }
-
-  render() {
-    const { showExtendedMonth } = this.props;
-
-    return (
-      <div>
-        <input
-          type="checkbox"
-          id="settings-extended-month"
-          checked={showExtendedMonth}
-          ref={input => (this.input = input)}
-          onChange={this.handleChange}
-        />
-        <label htmlFor="settings-extended-month">Show extended month</label>
-      </div>
-    );
-  }
-}
 
 const mapStateToProps = ({ settings: { showExtendedMonth } }) => ({
   showExtendedMonth,

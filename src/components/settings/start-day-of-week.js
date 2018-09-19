@@ -1,42 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
+import FieldsCheckbox from '../fields/checkbox';
 import { settingsSetStartDayOfWeek } from '../../state/settings/actions';
 
-const setStartDayOfWeek = (dispatch, checked) => {
-  dispatch(settingsSetStartDayOfWeek(checked));
+const SettingsStartDayOfWeek = ({ dispatch, startDayOfWeek }) => {
+  return (
+    <FieldsCheckbox
+      dispatch={dispatch}
+      action={settingsSetStartDayOfWeek}
+      id="settings-week-start"
+      label="Mon-Sun calendar"
+      checked={startDayOfWeek}
+    />
+  );
 };
-
-class SettingsStartDayOfWeek extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange() {
-    const { dispatch } = this.props;
-    const input = this.input;
-    setStartDayOfWeek(dispatch, input.checked);
-  }
-
-  render() {
-    const { startDayOfWeek } = this.props;
-
-    return (
-      <div>
-        <input
-          type="checkbox"
-          id="settings-week-start"
-          checked={startDayOfWeek}
-          ref={input => (this.input = input)}
-          onChange={this.handleChange}
-        />
-        <label htmlFor="settings-week-start">Mon-Sun calendar</label>
-      </div>
-    );
-  }
-}
 
 const mapStateToProps = ({ settings: { startDayOfWeek } }) => ({
   startDayOfWeek,
