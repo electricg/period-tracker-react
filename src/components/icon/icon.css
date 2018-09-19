@@ -20,3 +20,12 @@
   --size: 1.25em;
   stroke: rgba(0, 0, 0, 0.2);
 }
+
+.icon--number {
+  --size: 0.667em;
+}
+
+.icon--checkbox {
+  --size: 1em;
+  margin: 0;
+}

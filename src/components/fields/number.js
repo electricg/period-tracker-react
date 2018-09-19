@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 
+import Icon from '../icon';
+
 class FieldsNumber extends PureComponent {
   constructor(props) {
     super(props);
@@ -26,7 +28,7 @@ class FieldsNumber extends PureComponent {
               this.handleChange(-1);
             }}
           >
-            -
+            <Icon id="minus" cssModifier="number" />
           </button>
           <input
             type="number"
@@ -43,7 +45,7 @@ class FieldsNumber extends PureComponent {
               this.handleChange(1);
             }}
           >
-            +
+            <Icon id="plus" cssModifier="number" />
           </button>
         </div>
       </div>

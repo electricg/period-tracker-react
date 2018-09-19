@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import Icon from '../icon';
 
 class FieldsCheckbox extends PureComponent {
   constructor(props) {
@@ -26,7 +27,19 @@ class FieldsCheckbox extends PureComponent {
           ref={input => (this.input = input)}
           onChange={this.handleChange}
         />
-        <label htmlFor={id}>{label}</label>
+        <label htmlFor={id}>
+          {label}
+          <Icon
+            id="unchecked"
+            cssModifier="checkbox"
+            className="checkbox--unchecked"
+          />
+          <Icon
+            id="checked"
+            cssModifier="checkbox"
+            className="checkbox--checked"
+          />
+        </label>
       </div>
     );
   }
