@@ -1,33 +1,23 @@
-.main-nav {
-  background: var(--c-theme-first);
-  bottom: 0;
-  position: fixed;
-  width: 100%;
-  z-index: 1;
-}
-
 .main-nav__list {
   align-items: stretch;
   display: flex;
-  height: 100%;
   margin: 0;
   padding: 0;
   text-align: center;
-  width: 100%;
 }
 
 .main-nav__item {
   flex: 1;
-  height: 100%;
   list-style: none;
 }
 
 .main-nav__link {
+  background: var(--c-theme-first);
   color: var(--c-theme-second);
   display: block;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   height: 100%;
-  padding-top: 0.5em;
+  padding-top: 0.5rem;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -40,4 +30,9 @@
   background: var(--c-theme-second);
   color: var(--c-theme-first);
   text-shadow: none;
+}
+
+.main-nav__link-text {
+  display: block;
+  margin-top: 0.25em;
 }

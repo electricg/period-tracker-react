@@ -6,8 +6,17 @@
   width: var(--size);
 }
 
+.icon--main-header {
+  --size: 35px;
+  margin: 0 5px 0 0;
+}
+
+.icon--main-header-status {
+  --size: 0.8rem;
+  margin: 0 0 0 0.4em;
+}
+
 .icon--main-nav {
   --size: 1.25em;
-  margin-bottom: 0.25em;
   stroke: rgba(0, 0, 0, 0.2);
 }

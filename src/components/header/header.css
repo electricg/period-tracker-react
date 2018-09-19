@@ -1,0 +1,18 @@
+.main-header {
+  align-items: center;
+  background: var(--c-theme-first);
+  color: var(--c-theme-second);
+  display: flex;
+  padding: var(--gap);
+}
+
+.main-header__title {
+  font-size: 1rem;
+  margin: 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.main-header__status {
+  display: flex;
+  margin-left: auto;
+}

@@ -15,7 +15,7 @@ class App extends Component {
       <Fragment>
         <Header />
         <Nav />
-        <main>
+        <main className="main-content">
           <Switch>
             <Route exact path="/" component={PageHome} />
             <Route exact path="/calendar" component={PageCalendar} />

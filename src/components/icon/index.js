@@ -15,7 +15,7 @@ const Icon = ({ id = '', cssModifier = '', className = '' }) => {
   });
 
   return (
-    <svg className={svgClasses}>
+    <svg className={svgClasses} role="presentation">
       <use xlinkHref={`#icon-${id}`} />
     </svg>
   );
