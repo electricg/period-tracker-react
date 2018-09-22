@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should fail 404 with log sub page 1`] = `
+exports[`Nav should fail 404 with log sub page 1`] = `
 <nav
   className="main-nav"
 >
@@ -107,7 +107,7 @@ exports[`should fail 404 with log sub page 1`] = `
 </nav>
 `;
 
-exports[`should fail 404 with not existing page 1`] = `
+exports[`Nav should fail 404 with not existing page 1`] = `
 <nav
   className="main-nav"
 >
@@ -214,7 +214,7 @@ exports[`should fail 404 with not existing page 1`] = `
 </nav>
 `;
 
-exports[`should fail 404 with settings sub page 1`] = `
+exports[`Nav should fail 404 with settings sub page 1`] = `
 <nav
   className="main-nav"
 >
@@ -321,7 +321,7 @@ exports[`should fail 404 with settings sub page 1`] = `
 </nav>
 `;
 
-exports[`should succeed with calendar page 1`] = `
+exports[`Nav should succeed with calendar page 1`] = `
 <nav
   className="main-nav"
 >
@@ -429,7 +429,7 @@ exports[`should succeed with calendar page 1`] = `
 </nav>
 `;
 
-exports[`should succeed with calendar sub page 1`] = `
+exports[`Nav should succeed with calendar sub page 1`] = `
 <nav
   className="main-nav"
 >
@@ -537,7 +537,7 @@ exports[`should succeed with calendar sub page 1`] = `
 </nav>
 `;
 
-exports[`should succeed with home page 1`] = `
+exports[`Nav should succeed with home page 1`] = `
 <nav
   className="main-nav"
 >
@@ -645,7 +645,7 @@ exports[`should succeed with home page 1`] = `
 </nav>
 `;
 
-exports[`should succeed with log page 1`] = `
+exports[`Nav should succeed with log page 1`] = `
 <nav
   className="main-nav"
 >
@@ -753,7 +753,7 @@ exports[`should succeed with log page 1`] = `
 </nav>
 `;
 
-exports[`should succeed with settings page 1`] = `
+exports[`Nav should succeed with settings page 1`] = `
 <nav
   className="main-nav"
 >
@@ -860,3 +860,9 @@ exports[`should succeed with settings page 1`] = `
   </ul>
 </nav>
 `;
+
+exports[`NavItem should fail returning nothing if no id is passed 1`] = `null`;
+
+exports[`NavItem should fail returning nothing if no label is passed 1`] = `null`;
+
+exports[`NavItem should fail returning nothing if no path is passed 1`] = `null`;

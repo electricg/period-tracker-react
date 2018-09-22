@@ -4,7 +4,7 @@ import Icon from '../icon';
 
 import './nav.css';
 
-const NavItem = ({ id = '', path = '', label = '', exact = false }) => {
+export const NavItem = ({ id = '', path = '', label = '', exact = false }) => {
   if (!id || !path || !label) {
     return null;
   }
