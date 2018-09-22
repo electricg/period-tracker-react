@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import DateFnsFormat from 'date-fns/format';
 
 import { addEntry } from '../../state/entries/actions';
 
-class EntriesAdd extends Component {
+class EntriesAdd extends PureComponent {
   constructor(props) {
     super(props);
 
@@ -46,7 +46,9 @@ class EntriesAdd extends Component {
 
     return (
       <div>
-        <button onClick={this.handleShowAdd}>{addLabel}</button>
+        <button type="button" onClick={this.handleShowAdd}>
+          {addLabel}
+        </button>
         <form
           id="add-form"
           onSubmit={this.handleSubmit}

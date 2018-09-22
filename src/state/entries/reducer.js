@@ -15,6 +15,11 @@ export default (state = defaultState, action) => {
     case ENTRIES_REMOVE: {
       const { value } = data;
       const index = state.indexOf(value);
+
+      if (index === -1) {
+        return state;
+      }
+
       const newEntries = [
         ...state.slice(0, index),
         ...state.slice(index + 1, state.length),

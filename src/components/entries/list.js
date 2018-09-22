@@ -1,7 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import EntriesEntry from './entry';
 
-const EntriesList = () => {
-  return <div>list</div>;
+const EntriesList = ({ entries = [] }) => {
+  return (
+    <div>
+      {entries.map(item => (
+        <EntriesEntry key={item} entry={item} />
+      ))}
+    </div>
+  );
 };
 
-export default EntriesList;
+const mapStateToProps = ({ entries = [] }) => ({
+  entries,
+});
+
+export default connect(mapStateToProps)(EntriesList);
