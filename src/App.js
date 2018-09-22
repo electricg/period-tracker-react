@@ -5,6 +5,7 @@ import PageCalendar from './pages/calendar';
 import PageHome from './pages/home';
 import PageLog from './pages/log';
 import PageSettings from './pages/settings';
+import NoMatch from './pages/404';
 
 import Header from './components/header';
 import Nav from './components/nav';
@@ -21,6 +22,7 @@ class App extends Component {
             <Route exact path="/calendar" component={PageCalendar} />
             <Route exact path="/log" component={PageLog} />
             <Route exact path="/settings" component={PageSettings} />
+            <Route component={NoMatch} />
           </Switch>
         </main>
       </Fragment>
