@@ -1,0 +1,541 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should succeed with calendar page 1`] = `
+<nav
+  className="main-nav"
+>
+  <ul
+    className="main-nav__list"
+  >
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current={null}
+        className="main-nav__link"
+        href="/"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-home"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          home
+        </span>
+      </a>
+    </li>
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current="page"
+        className="main-nav__link main-nav__link--selected"
+        href="/calendar"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-calendar"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          calendar
+        </span>
+      </a>
+    </li>
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current={null}
+        className="main-nav__link"
+        href="/log"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-log"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          log
+        </span>
+      </a>
+    </li>
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current={null}
+        className="main-nav__link"
+        href="/settings"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-settings"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          settings
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`should succeed with calendar sub page 1`] = `
+<nav
+  className="main-nav"
+>
+  <ul
+    className="main-nav__list"
+  >
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current={null}
+        className="main-nav__link"
+        href="/"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-home"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          home
+        </span>
+      </a>
+    </li>
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current="page"
+        className="main-nav__link main-nav__link--selected"
+        href="/calendar"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-calendar"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          calendar
+        </span>
+      </a>
+    </li>
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current={null}
+        className="main-nav__link"
+        href="/log"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-log"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          log
+        </span>
+      </a>
+    </li>
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current={null}
+        className="main-nav__link"
+        href="/settings"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-settings"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          settings
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`should succeed with home page 1`] = `
+<nav
+  className="main-nav"
+>
+  <ul
+    className="main-nav__list"
+  >
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current="page"
+        className="main-nav__link main-nav__link--selected"
+        href="/"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-home"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          home
+        </span>
+      </a>
+    </li>
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current={null}
+        className="main-nav__link"
+        href="/calendar"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-calendar"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          calendar
+        </span>
+      </a>
+    </li>
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current={null}
+        className="main-nav__link"
+        href="/log"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-log"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          log
+        </span>
+      </a>
+    </li>
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current={null}
+        className="main-nav__link"
+        href="/settings"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-settings"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          settings
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`should succeed with log page 1`] = `
+<nav
+  className="main-nav"
+>
+  <ul
+    className="main-nav__list"
+  >
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current={null}
+        className="main-nav__link"
+        href="/"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-home"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          home
+        </span>
+      </a>
+    </li>
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current={null}
+        className="main-nav__link"
+        href="/calendar"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-calendar"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          calendar
+        </span>
+      </a>
+    </li>
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current="page"
+        className="main-nav__link main-nav__link--selected"
+        href="/log"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-log"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          log
+        </span>
+      </a>
+    </li>
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current={null}
+        className="main-nav__link"
+        href="/settings"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-settings"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          settings
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`should succeed with settings page 1`] = `
+<nav
+  className="main-nav"
+>
+  <ul
+    className="main-nav__list"
+  >
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current={null}
+        className="main-nav__link"
+        href="/"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-home"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          home
+        </span>
+      </a>
+    </li>
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current={null}
+        className="main-nav__link"
+        href="/calendar"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-calendar"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          calendar
+        </span>
+      </a>
+    </li>
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current={null}
+        className="main-nav__link"
+        href="/log"
+        onClick={[Function]}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-log"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          log
+        </span>
+      </a>
+    </li>
+    <li
+      className="main-nav__item"
+    >
+      <a
+        aria-current="page"
+        className="main-nav__link main-nav__link--selected"
+        href="/settings"
+        onClick={[Function]}
+        style={Object {}}
+      >
+        <svg
+          className="icon icon--main-nav"
+          role="presentation"
+        >
+          <use
+            xlinkHref="#icon-settings"
+          />
+        </svg>
+        <span
+          className="main-nav__link-text"
+        >
+          settings
+        </span>
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
