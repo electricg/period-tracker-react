@@ -41,11 +41,13 @@ const Nav = () => {
       id: 'log',
       path: '/log',
       label: 'log',
+      exact: true,
     },
     {
       id: 'settings',
       path: '/settings',
       label: 'settings',
+      exact: true,
     },
   ];
 
