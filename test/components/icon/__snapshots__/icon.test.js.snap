@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should fail returning nothing if no id is passed 1`] = `null`;
+
+exports[`should succeed when no className is passed 1`] = `
+<svg
+  className="icon icon--somecssmodifier"
+  role="presentation"
+>
+  <use
+    xlinkHref="#icon-someid"
+  />
+</svg>
+`;
+
+exports[`should succeed when no cssModifier is passed 1`] = `
+<svg
+  className="icon someclassname"
+  role="presentation"
+>
+  <use
+    xlinkHref="#icon-someid"
+  />
+</svg>
+`;
