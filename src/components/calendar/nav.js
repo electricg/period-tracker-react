@@ -15,7 +15,11 @@ export const CalendarNavMonth = ({ date, dir }) => {
 
   return (
     <th>
-      <Link to={formattedLink} className="calendar__nav" title={formattedName}>
+      <Link
+        to={`/calendar/${formattedLink}`}
+        className="calendar__nav"
+        title={formattedName}
+      >
         <Icon id={icon} cssModifier="calendar-nav" />
       </Link>
     </th>
