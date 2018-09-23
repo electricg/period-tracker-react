@@ -19,7 +19,9 @@ class App extends Component {
         <main className="main-content">
           <Switch>
             <Route exact path="/" component={PageHome} />
+            {/* in this case it's just easier to repeat the route for the two possible calendar urls */}
             <Route exact path="/calendar" component={PageCalendar} />
+            <Route exact path="/calendar/:date" component={PageCalendar} />
             <Route exact path="/log" component={PageLog} />
             <Route exact path="/settings" component={PageSettings} />
             <Route component={NoMatch} />

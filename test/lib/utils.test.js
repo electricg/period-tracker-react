@@ -1,8 +1,17 @@
 import DateFnsFormat from 'date-fns/format';
-import _utils from '../../src/lib/utils';
+const _utils = require('../../src/lib/utils');
 import { mockDate, mockDateReset } from '../helper';
 
-const { getToday, ...utils } = _utils;
+console.log(_utils);
+
+const {
+  getMonth,
+  getToday,
+  getWeekdaysNames,
+  getNextMonth,
+  getPrevMonth,
+  ...utils
+} = _utils;
 
 describe('getToday', () => {
   const cases = [

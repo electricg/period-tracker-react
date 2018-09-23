@@ -1,15 +1,29 @@
 import DateFnsDifferenceInDays from 'date-fns/difference_in_days';
 import DateFnsAddDays from 'date-fns/add_days';
 import DateFnsFormat from 'date-fns/format';
+import DateFnsEachDay from 'date-fns/each_day';
+import DateFnsStartOfWeek from 'date-fns/start_of_week';
+import DateFnsEndOfWeek from 'date-fns/end_of_week';
+import DateFnsAddMonths from 'date-fns/add_months';
+import DateFnsSubMonths from 'date-fns/sub_months';
+
+/**
+ * Get month number from date
+ * @param {Object} date Object Date
+ * @returns {Number} month number starting from 1
+ */
+export const getMonth = date => {
+  return date.getMonth() + 1;
+};
 
 /**
  * Return today's date
  * @returns {String} format of the date is YYYY-MM-DD
  */
-const getToday = () => {
+export const getToday = () => {
   const date = new Date();
   const year = date.getFullYear();
-  const _month = date.getMonth() + 1;
+  const _month = getMonth(date);
   const _day = date.getDate();
 
   const month = _month < 10 ? `0${_month}` : _month;
@@ -23,7 +37,7 @@ const getToday = () => {
  * @param {String} date - format of the date is YYYY-MM-DD
  * @return {Object}
  */
-const newDate = (date = '') => {
+export const newDate = (date = '') => {
   let _date;
 
   if (typeof date === 'string' && date) {
@@ -40,7 +54,7 @@ const newDate = (date = '') => {
  * @param {String[]} dates - format of the date is YYYY-MM-DD
  * @returns {String[]} format of the date is YYYY-MM-DD
  */
-const sortDates = (dates = []) => {
+export const sortDates = (dates = []) => {
   if (!Array.isArray(dates)) {
     return [];
   }
@@ -53,7 +67,7 @@ const sortDates = (dates = []) => {
  * @param {String[]} dates
  * @returns {String[]}
  */
-const deleteDuplicatedDates = (dates = []) => {
+export const deleteDuplicatedDates = (dates = []) => {
   if (!Array.isArray(dates)) {
     return [];
   }
@@ -67,7 +81,7 @@ const deleteDuplicatedDates = (dates = []) => {
  * @param {String[]} dates - array to search in
  * @returns {Boolean} true if it exists
  */
-const doesDateExists = (date = '', dates = []) => {
+export const doesDateExists = (date = '', dates = []) => {
   if (!Array.isArray(dates)) {
     return false;
   }
@@ -82,7 +96,7 @@ const doesDateExists = (date = '', dates = []) => {
  * @param {String[]} dates - format of the date is YYYY-MM-DD
  * @returns {Number[]} positive integers
  */
-const calcDatesRanges = (dates = []) => {
+export const calcDatesRanges = (dates = []) => {
   if (!Array.isArray(dates)) {
     return [];
   }
@@ -110,7 +124,7 @@ const calcDatesRanges = (dates = []) => {
  * @param {Number} cover - number of days to include for each date, must be positive
  * @returns {String[]} format of the date is YYYY-MM-DD
  */
-const calcDatesCovered = (dates = [], cover = 0) => {
+export const calcDatesCovered = (dates = [], cover = 0) => {
   if (!Array.isArray(dates)) {
     return [];
   }
@@ -139,7 +153,7 @@ const calcDatesCovered = (dates = [], cover = 0) => {
  * @param {Number} range
  * @returns {String[]} format of the date is YYYY-MM-DD
  */
-const calcFutureDates = (lastDate, untilDate, range = 28) => {
+export const calcFutureDates = (lastDate, untilDate, range = 28) => {
   if (!lastDate || !untilDate || range < 1) {
     return [];
   }
@@ -157,15 +171,38 @@ const calcFutureDates = (lastDate, untilDate, range = 28) => {
   return res;
 };
 
+/**
+ * Return list of weekdays names starting by the day passed as parameter
+ * @param {Number} weekStartsOn index of the first day of the week - 0 Sunday, 1 Monday, 6 Saturday
+ * @returns {String[]}
+ */
+export const getWeekdaysNames = (weekStartsOn = 0) => {
+  const now = new Date();
+  const week = DateFnsEachDay(
+    DateFnsStartOfWeek(now, { weekStartsOn }),
+    DateFnsEndOfWeek(now, { weekStartsOn })
+  );
+  return week.map(item => DateFnsFormat(item, 'ddd'));
+};
+
+/**
+ *  Get year and month of one month after passed date
+ * @param {Date} date
+ * @returns {Date}
+ */
+export const getNextMonth = date => {
+  return DateFnsAddMonths(date, 1);
+};
+
+/**
+ *  Get year and month of one month before passed date
+ * @param {Date} date
+ * @returns {Date}
+ */
+export const getPrevMonth = date => {
+  return DateFnsSubMonths(date, 1);
+};
+
 // const addEntry = () => {};
 
 // const removeEntry = () => {};
-
-module.exports.getToday = getToday;
-module.exports.newDate = newDate;
-module.exports.sortDates = sortDates;
-module.exports.deleteDuplicatedDates = deleteDuplicatedDates;
-module.exports.doesDateExists = doesDateExists;
-module.exports.calcDatesRanges = calcDatesRanges;
-module.exports.calcDatesCovered = calcDatesCovered;
-module.exports.calcFutureDates = calcFutureDates;

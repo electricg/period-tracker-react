@@ -29,3 +29,7 @@
   --size: 1em;
   margin: 0;
 }
+
+.icon--calendar-nav {
+  --size: 2rem;
+}

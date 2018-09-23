@@ -1,8 +1,13 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class PageCalendar extends Component {
+import Calendar from '../components/calendar';
+
+class PageCalendar extends PureComponent {
   render() {
-    return <div>calendar</div>;
+    const { match = {} } = this.props;
+    const { params: { date = '' } = {} } = match;
+
+    return <Calendar current={date} />;
   }
 }
 
