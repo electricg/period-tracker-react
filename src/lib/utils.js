@@ -6,6 +6,8 @@ import DateFnsStartOfWeek from 'date-fns/start_of_week';
 import DateFnsEndOfWeek from 'date-fns/end_of_week';
 import DateFnsAddMonths from 'date-fns/add_months';
 import DateFnsSubMonths from 'date-fns/sub_months';
+import DateFnsEndOfMonth from 'date-fns/end_of_month';
+import DateFnsStartOfMonth from 'date-fns/start_of_month';
 
 /**
  * Get month number from date
@@ -201,6 +203,16 @@ export const getNextMonth = date => {
  */
 export const getPrevMonth = date => {
   return DateFnsSubMonths(date, 1);
+};
+
+export const getMonthDays = (date, weekStartsOn = 0) => {
+  const startOfMonth = DateFnsStartOfMonth(date);
+  const endOfMonth = DateFnsEndOfMonth(date);
+  const startOfWeek = DateFnsStartOfWeek(startOfMonth, { weekStartsOn });
+  const endOfWeek = DateFnsEndOfWeek(endOfMonth, { weekStartsOn });
+  const days = DateFnsEachDay(startOfWeek, endOfWeek);
+
+  return days;
 };
 
 // const addEntry = () => {};

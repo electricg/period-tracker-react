@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import CalendarNav from './nav';
 import CalendarWeekday from './week';
+import CalendarBody from './body';
 import { newDate } from '../../lib/utils';
 
 const Calendar = ({
@@ -11,21 +12,19 @@ const Calendar = ({
   showExtendedMonth = false,
 }) => {
   const date = newDate(current ? `${current}-01` : '');
-  const month = date.getMonth();
-  const year = date.getFullYear();
-
-  console.log(month, year);
 
   return (
-    <div>
-      calendar
-      <table className="calendar">
-        <thead>
-          <CalendarNav date={date} />
-          <CalendarWeekday start={startDayOfWeek} />
-        </thead>
-      </table>
-    </div>
+    <table className="calendar">
+      <thead>
+        <CalendarNav date={date} />
+        <CalendarWeekday start={startDayOfWeek} />
+      </thead>
+      <CalendarBody
+        date={date}
+        start={startDayOfWeek}
+        extended={showExtendedMonth}
+      />
+    </table>
   );
 };
 
