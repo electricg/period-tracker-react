@@ -17,7 +17,7 @@ export const NavItem = ({ id = '', path = '', label = '', exact = false }) => {
         to={path}
         exact={exact}
       >
-        <Icon id={id} cssModifier="main-nav" />
+        <Icon id={id} cssModifier="main-nav" hide={true} />
         <span className="main-nav__link-text">{label}</span>
       </NavLink>
     </li>

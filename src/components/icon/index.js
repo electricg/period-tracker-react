@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 import './icon.css';
 
-const Icon = ({ id = '', cssModifier = '', className = '' }) => {
+const Icon = ({ id = '', cssModifier = '', className = '', hide = false }) => {
   if (!id) {
     return null;
   }
@@ -14,8 +14,10 @@ const Icon = ({ id = '', cssModifier = '', className = '' }) => {
     [className]: !!className,
   });
 
+  const ariaHidden = hide ? true : null;
+
   return (
-    <svg className={svgClasses} role="presentation">
+    <svg className={svgClasses} role="img" aria-hidden={ariaHidden}>
       <use xlinkHref={`#icon-${id}`} />
     </svg>
   );
