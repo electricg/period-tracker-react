@@ -2,20 +2,33 @@ import React from 'react';
 import DateFnsFormat from 'date-fns/format';
 import classnames from 'classnames';
 
-import { getMonth, getMonthDays } from '../../lib/utils';
+import { getToday, getMonth, getMonthDays } from '../../lib/utils';
 
-export const CalendarBodyDay = ({ date, currentMonth = 0 }) => {
+import './day.css';
+
+export const CalendarBodyDay = ({ date, currentMonth = 0, entries = [] }) => {
   const day = DateFnsFormat(date, 'D');
   const month = getMonth(date);
+  const formattedDate = DateFnsFormat(date, 'YYYY-MM-DD');
+  const today = getToday();
+
+  const namespaceClasses = 'calendar__day';
+
   const cellClasses = classnames({
-    calendar__day: true,
-    'calendar__day--another-month': month !== currentMonth,
+    [namespaceClasses]: true,
+    [`${namespaceClasses}--today`]: today === formattedDate,
+    [`${namespaceClasses}--another-month`]: month !== currentMonth,
+    [`${namespaceClasses}--entry`]: entries.indexOf(formattedDate) !== -1,
   });
 
   return <td className={cellClasses}>{day}</td>;
 };
 
-export const CalendarBodyWeek = ({ days = [], currentMonth = 0 }) => {
+export const CalendarBodyWeek = ({
+  days = [],
+  currentMonth = 0,
+  entries = [],
+}) => {
   if (!days.length) {
     return null;
   }
@@ -27,13 +40,14 @@ export const CalendarBodyWeek = ({ days = [], currentMonth = 0 }) => {
           key={`day-${index}`}
           date={day}
           currentMonth={currentMonth}
+          entries={entries}
         />
       ))}
     </tr>
   );
 };
 
-const CalendarBody = ({ date, start = 0, extended = false }) => {
+const CalendarBody = ({ date, start = 0, extended = false, entries = [] }) => {
   const days = getMonthDays(date, start);
   const currentMonth = getMonth(date);
   const weeks = [];
@@ -53,6 +67,7 @@ const CalendarBody = ({ date, start = 0, extended = false }) => {
           key={`week-${index}`}
           days={week}
           currentMonth={currentMonth}
+          entries={entries}
         />
       ))}
     </tbody>

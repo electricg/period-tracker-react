@@ -1,0 +1,23 @@
+.calendar__day--today {
+  background: #f00;
+}
+
+.calendar__day--another-month {
+  background: #f90;
+}
+
+.calendar__day--entry {
+  background: #ff0;
+}
+
+.calendar__day--entry-following {
+  background: #0f0;
+}
+
+.calendar__day--future {
+  background: #0ff;
+}
+
+.calendar__day--future-following {
+  background: #f0f;
+}

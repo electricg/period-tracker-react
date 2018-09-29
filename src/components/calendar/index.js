@@ -10,6 +10,7 @@ const Calendar = ({
   current = '',
   startDayOfWeek = 0,
   showExtendedMonth = false,
+  entries = [],
 }) => {
   const date = newDate(current ? `${current}-01` : '');
 
@@ -23,6 +24,7 @@ const Calendar = ({
         date={date}
         start={startDayOfWeek}
         extended={showExtendedMonth}
+        entries={entries}
       />
     </table>
   );
@@ -30,9 +32,11 @@ const Calendar = ({
 
 const mapStateToProps = ({
   settings: { startDayOfWeek, showExtendedMonth } = {},
+  entries = [],
 }) => ({
   startDayOfWeek,
   showExtendedMonth,
+  entries,
 });
 
 export default connect(mapStateToProps)(Calendar);
