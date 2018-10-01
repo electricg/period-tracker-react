@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import FieldsNumber from '../fields/number';
 import { settingsSetCycleLength } from '../../state/settings/actions';
+import { getSettingsCycleLength } from '../../state/settings/selectors';
 
 const SettingsCycleLength = ({ dispatch, cycleLength }) => {
   return (
@@ -16,8 +17,8 @@ const SettingsCycleLength = ({ dispatch, cycleLength }) => {
   );
 };
 
-const mapStateToProps = ({ settings: { cycleLength } }) => ({
-  cycleLength,
+const mapStateToProps = state => ({
+  cycleLength: getSettingsCycleLength(state),
 });
 
 export default connect(mapStateToProps)(SettingsCycleLength);

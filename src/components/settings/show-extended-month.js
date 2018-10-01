@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import FieldsCheckbox from '../fields/checkbox';
 import { settingsSetShowExtendedMonth } from '../../state/settings/actions';
+import { getSettingsShowExtendedMonth } from '../../state/settings/selectors';
 
 const SettingsShowExtendedMonth = ({ dispatch, showExtendedMonth }) => {
   return (
@@ -16,8 +17,8 @@ const SettingsShowExtendedMonth = ({ dispatch, showExtendedMonth }) => {
   );
 };
 
-const mapStateToProps = ({ settings: { showExtendedMonth } }) => ({
-  showExtendedMonth,
+const mapStateToProps = state => ({
+  showExtendedMonth: getSettingsShowExtendedMonth(state),
 });
 
 export default connect(mapStateToProps)(SettingsShowExtendedMonth);

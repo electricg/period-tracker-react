@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import FieldsNumber from '../fields/number';
 import { settingsSetPeriodLength } from '../../state/settings/actions';
+import { getSettingsPeriodLength } from '../../state/settings/selectors';
 
 const SettingsPeriodLength = ({ dispatch, periodLength }) => {
   return (
@@ -16,8 +17,8 @@ const SettingsPeriodLength = ({ dispatch, periodLength }) => {
   );
 };
 
-const mapStateToProps = ({ settings: { periodLength } }) => ({
-  periodLength,
+const mapStateToProps = state => ({
+  periodLength: getSettingsPeriodLength(state),
 });
 
 export default connect(mapStateToProps)(SettingsPeriodLength);

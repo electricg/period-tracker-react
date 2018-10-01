@@ -5,12 +5,17 @@ import CalendarNav from './nav';
 import CalendarWeekday from './week';
 import CalendarBody from './body';
 import { newDate } from '../../lib/utils';
+import { getEntriesOriginal } from '../../state/entries/selectors';
+import {
+  getSettingsStartDayOfWeek,
+  getSettingsShowExtendedMonth,
+} from '../../state/settings/selectors';
 
 const Calendar = ({
   current = '',
   startDayOfWeek = 0,
   showExtendedMonth = false,
-  entries = [],
+  original = [],
 }) => {
   const date = newDate(current ? `${current}-01` : '');
 
@@ -24,19 +29,16 @@ const Calendar = ({
         date={date}
         start={startDayOfWeek}
         extended={showExtendedMonth}
-        entries={entries}
+        entries={original}
       />
     </table>
   );
 };
 
-const mapStateToProps = ({
-  settings: { startDayOfWeek, showExtendedMonth } = {},
-  entries = [],
-}) => ({
-  startDayOfWeek,
-  showExtendedMonth,
-  entries,
+const mapStateToProps = state => ({
+  startDayOfWeek: getSettingsStartDayOfWeek(state),
+  showExtendedMonth: getSettingsShowExtendedMonth(state),
+  original: getEntriesOriginal(state),
 });
 
 export default connect(mapStateToProps)(Calendar);
