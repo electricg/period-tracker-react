@@ -1,4 +1,5 @@
 import { ENTRIES_ADD, ENTRIES_REMOVE } from './constants';
+import { calcDatesCovered } from '../../lib/utils';
 
 const defaultState = {
   original: [],
@@ -12,12 +13,15 @@ export default (state = defaultState, action) => {
   switch (type) {
     case ENTRIES_ADD: {
       const { original } = state;
-      const { value } = data;
+      const { value, length } = data;
       const newOriginal = [...original, value];
       newOriginal.sort();
+      const newPast = calcDatesCovered(newOriginal, length);
+
       return {
         ...state,
         original: newOriginal,
+        past: newPast,
       };
     }
     case ENTRIES_REMOVE: {
@@ -33,6 +37,7 @@ export default (state = defaultState, action) => {
         ...original.slice(0, index),
         ...original.slice(index + 1, original.length),
       ];
+
       return {
         ...state,
         original: newOriginal,

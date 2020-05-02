@@ -137,7 +137,8 @@ export const calcDatesCovered = (dates = [], cover = 0) => {
 
   return dates.reduce((acc, date) => {
     const oDate = newDate(date);
-    acc.push(date);
+    // TODO: fix test
+    // acc.push(date);
 
     for (let i = 1; i <= cover; i++) {
       const n = DateFnsAddDays(oDate, i);
